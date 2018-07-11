@@ -10,7 +10,7 @@ endif
 
 SRCS = rb.c stat.c time.c times.c list.c semaphore.c socket.c poll.c select.c
 #mount.c
-OBJS = $(SRCS:.c=.o)
+OBJS := $(patsubst $(TOPDIR)/%,$(BUILD_DIR)/%,$(abspath $(SRCS:.c=.o)))
 
 all: $(ARCH)
 
